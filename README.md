@@ -62,7 +62,7 @@ graph BT;
   
 ## Usage
 1. launch elasticsearch instance
-2. launch *$repo/lineup_svr/app.py$ using `python app.py`
+2. launch *$repo/lineup_svr/app.py* using `python app.py`
 3. 
     - *(for gecko-based e.g. Firefox, Librewolf)*
     - go to [about:debugging](about:debugging)
