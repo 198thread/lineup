@@ -1,5 +1,5 @@
 # lineup
-face database in browsers
+face database when browsing
 
 ## Aim
 
@@ -25,13 +25,13 @@ graph LR;
     A --> F[Light-Blue Puzzle Piece]
     F --> G["Sky"]
 ```
-We can reduce the time it takes to build up a whole series of references - we can offload that to a computer.
+We can reduce the Δtime it takes to build up a whole series of references, using machine learning.
 
-We can definitely do this for faces, as spoken about on the [Search Engine postcast](https://podcasts.apple.com/gb/podcast/should-this-creepy-search-engine-exist/id1614253637?i=1000655151849)
+We can definitely do this for faces, as PJ Vogt's [Search Engine postcast](https://podcasts.apple.com/gb/podcast/should-this-creepy-search-engine-exist/id1614253637?i=1000655151849) discusses
 
 ## Mechanism
 
-Using Deepface to build up the reference list, an extension can allow for all faces recognised while browsing to be stored somewhere, then checked. 
+Using Deepface to build up the reference list in Elasticsearch, a browser extension can allow for all faces recognised while browsing to be stored somewhere, then checked. 
 
 This software decouples the browsing from the references.
 
@@ -45,3 +45,14 @@ graph BT;
     E[librewolf] --> A
     F[firefox] --> A
 ```
+
+## Installation in 5 steps
+
+0. Install [Elasticsearch](https://www.elastic.co/guide/en/elasticsearch/reference/current/install-elasticsearch.html#elasticsearch-install-packages)
+1. Clone this repo
+2. Add your Elasticsearch credentials into $cloned-repo/lineup-svr/env_dials.py OR set *"xpack.security.enabled = False"* in elasticsearch/config
+3. run *"pip install -r $cloned-repo/lineup-svr/requirements.txt"*
+4. in your gecko-based browser (firefox/librewolf), go to about:debugging, on the left select *"This Browser"* then *"load temporary extension"* and select *$cloned-repo/lineup-ext/manifest.json*
+
+## Demo 
+
