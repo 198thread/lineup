@@ -9,13 +9,14 @@ graph TD;
     A["1001 pieces left"] --> B[Blue Puzzle Piece]
     B -.-> C[Sky?]
     B -.-> D[Sea?]
+```
 
 ```mermaid
 graph TD;
     style E stroke-width:6px
     A["11 pieces left"] --> B[Green Puzzle Piece]
     B --> E["Tree on Left"]
-
+```
 We can reduce the time it takes to build up a whole series of references - we can offload that to a computer.
 
 We can definitely do this for faces, as spoken about on the [Search Engine postcast](https://podcasts.apple.com/gb/podcast/should-this-creepy-search-engine-exist/id1614253637?i=1000655151849)
@@ -35,4 +36,4 @@ graph TD;
     D[firefox] --> A
     E[librewolf] --> A
     F[firefox] --> A
-
+```
