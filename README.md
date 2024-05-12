@@ -1,6 +1,9 @@
 # lineup
 face database when browsing
 
+## Demo 
+
+
 ## Aim
 
 Puzzle pieces ask us to recognise from reference:
@@ -42,13 +45,19 @@ graph BT;
     F{{librewolf}} <--> A
 ```
 
-## Installation in 5 steps
+## Installation
 
 0. Install [Elasticsearch](https://www.elastic.co/guide/en/elasticsearch/reference/current/install-elasticsearch.html#elasticsearch-install-packages)
 1. Clone this repo
-2. Add your Elasticsearch credentials into $cloned-repo/lineup-svr/env_dials.py OR set *"xpack.security.enabled = False"* in elasticsearch/config
+    2(Choice A). Add your Elasticsearch credentials into $cloned-repo/lineup-svr/env_dials.py
+    2(Choice B). set *"xpack.security.enabled = False"* in elasticsearch/config
 3. run *"pip install -r $cloned-repo/lineup-svr/requirements.txt"*
-4. in your gecko-based browser (firefox/librewolf), go to about:debugging, on the left select *"This Browser"* then *"load temporary extension"* and select *$cloned-repo/lineup-ext/manifest.json*
+4.
+    a. in your gecko-based browser (firefox/librewolf)
+    b. go to about:debugging
+    c. on the left select *"This Browser"*
+    d. *"load temporary extension"*
+    e. select *$cloned-repo/lineup-ext/manifest.json*
 
-## Demo 
-
+## License
+Please observe the license, local laws - harmful action is ugly
