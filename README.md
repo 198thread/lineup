@@ -6,7 +6,7 @@ face database in browsers
 Puzzle pieces ask us to recognise from reference:
 ```mermaid
 graph LR;
-    A((10001 pieces left)) --> B[Blue Puzzle Piece]
+    A((   10001/10001 pieces left   )) --> B[Blue Puzzle Piece]
     B -.-> C[Sky?]
     B -.-> D[Sea?]
 ```
@@ -14,7 +14,7 @@ graph LR;
 ```mermaid
 graph LR;
     style E stroke-width:6px
-    A((11 pieces left)) --> B[Green Puzzle Piece]
+    A((   11 pieces left    )) --> B[Green Puzzle Piece]
     B --> E["Tree on Left"]
 ```
 We can reduce the time it takes to build up a whole series of references - we can offload that to a computer.
