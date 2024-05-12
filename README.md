@@ -3,8 +3,9 @@ face database when browsing
 
 ## Demo 
 
+![](lineup_demo.mp4)
 
-## Aim
+## Why
 
 Puzzle pieces ask us to recognise from reference:
 ```mermaid
@@ -49,13 +50,19 @@ graph BT;
 
 #### Installation - Database
 0. Install [Elasticsearch](https://www.elastic.co/guide/en/elasticsearch/reference/current/install-elasticsearch.html#elasticsearch-install-packages) and [Python 3.12](https://www.python.org/downloads/release/python-3120/)
-1. Edit *$elasticsearch-home/config/elasticsearch.yaml*, appending
+1. **AFTER ELASTICSEARCH INSTALLATION**, Edit *$elasticsearch-home/config/elasticsearch.yaml*, setting 
    `xpack.security.enabled: false`
 
 #### Installation - Client Side
 2. Clone this repo
 3. run `pip install -r $repo/requirements.txt`
-4. *(for gecko-based e.g. Firefox, Librewolf)*
+
+  
+## Usage
+1. launch elasticsearch instance
+2. launch *$repo/lineup_svr/app.py$ using `python app.py`
+3. 
+    - *(for gecko-based e.g. Firefox, Librewolf)*
     - go to [about:debugging](about:debugging)
     - select `This Browser`, then `load temporary extension`
     - selecting *$repo/lineup_ext/manifest.json*
@@ -65,7 +72,7 @@ graph BT;
 # Licensing Information
 
 ## Open Source License
-This software is available under the [MIT License](https://github.com/198thread/lineup/blob/main/LICENSE) for non-commercial use. This means individuals and organizations using the software without a commercial purpose can do so freely, with no cost, subject to the terms of the MIT License.
+This software is available under the ![MIT License](LICENSE) for non-commercial use. This means individuals and organizations using the software without a commercial purpose can do so freely, with no cost, subject to the terms of the MIT License.
 
 ## Commercial License
 Organizations wishing to use this software for commercial purposes should contact us to obtain a Commercial License. The Commercial License includes provisions tailored for enterprise use, including support and warranty clauses that are not available under the Open Source License.
