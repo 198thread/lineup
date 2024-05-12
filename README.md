@@ -49,15 +49,24 @@ graph BT;
 
 0. Install [Elasticsearch](https://www.elastic.co/guide/en/elasticsearch/reference/current/install-elasticsearch.html#elasticsearch-install-packages)
 1. Clone this repo
-    2(Choice A). Add your Elasticsearch credentials into $cloned-repo/lineup-svr/env_dials.py
-    2(Choice B). set *"xpack.security.enabled = False"* in elasticsearch/config
+- 2(Choice A). Add your Elasticsearch credentials into $cloned-repo/lineup-svr/env_dials.py
+- 2(Choice B). set *"xpack.security.enabled = False"* in elasticsearch/config
 3. run *"pip install -r $cloned-repo/lineup-svr/requirements.txt"*
 4.
-    a. in your gecko-based browser (firefox/librewolf)
-    b. go to about:debugging
-    c. on the left select *"This Browser"*
-    d. *"load temporary extension"*
-    e. select *$cloned-repo/lineup-ext/manifest.json*
+- a. in your gecko-based browser (firefox/librewolf)
+- b. go to about:debugging
+- c. on the left select *"This Browser"*
+- d. *"load temporary extension"*
+- e. select *$cloned-repo/lineup-ext/manifest.json*
 
 ## License
-Please observe the license, local laws - harmful action is ugly
+
+# Licensing Information
+
+## Open Source License
+This software is available under the [MIT License](LICENSE.txt) for non-commercial use. This means individuals and organizations using the software without a commercial purpose can do so freely, with no cost, subject to the terms of the MIT License.
+
+## Commercial License
+Organizations wishing to use this software for commercial purposes should contact us to obtain a Commercial License. The Commercial License includes provisions tailored for enterprise use, including support and warranty clauses that are not available under the Open Source License.
+
+For more details on obtaining a Commercial License, please contact 198thread on GitHub
