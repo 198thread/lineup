@@ -48,7 +48,7 @@ graph BT;
     F{{librewolf}} <--> A
 ```
 
-## Installation
+# Installation & Usage
 
 #### Installation - Database
 0. Install [Elasticsearch](https://www.elastic.co/guide/en/elasticsearch/reference/current/install-elasticsearch.html#elasticsearch-install-packages) and [Python 3.12](https://www.python.org/downloads/release/python-3120/)
@@ -69,8 +69,7 @@ graph BT;
     - select `This Browser`, then `load temporary extension`
     - selecting *$repo/lineup_ext/manifest.json*
 
-
-## Licensing Information
+# Licensing
 
 ## Open Source License
 This software is available under the [MIT License](LICENSE) for non-commercial use. This means individuals and organizations using the software without a commercial purpose can do so freely, with no cost, subject to the terms of the MIT License.
