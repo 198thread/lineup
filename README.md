@@ -55,17 +55,7 @@ graph BT;
 2. Edit *elasticsearch/config/elasticsearch.yaml*, appending
    `xpack.security.enabled: false`
 3. run `pip install -r $repo/requirements.txt`
-4. Choose next part, based on your browser
-
-*(for chromium-based e.g. Chrome, Brave, Opera)*
-
-go to [chrome://extensions](chrome://extensions)
-
-turn on `developer mode`, then `load unpacked extension`
-
-selecting *$repo/lineup_ext/manifest.json
-
-
+4. 
 
 *(for gecko-based e.g. Firefox, Librewolf)*
 
