@@ -9,6 +9,7 @@ graph LR;
     A((   10001/10001 pieces left   )) --> B[Blue Puzzle Piece]
     B -.-> C[Sky?]
     B -.-> D[Sea?]
+    B -.-> E[Blue petticoat?]
 ```
 
 ```mermaid
