@@ -26,7 +26,7 @@ graph LR;
 ```
 Machine learning gives up some ways to reduce the Δtime it takes to build up references.
 
-As PJ Vogt's [Search Engine postcast](https://podcasts.apple.com/gb/podcast/should-this-creepy-search-engine-exist/id1614253637?i=1000655151849) discusses, this is possible for faces.
+As PJ Vogt's [Search Engine podcast](https://podcasts.apple.com/gb/podcast/should-this-creepy-search-engine-exist/id1614253637?i=1000655151849) discusses, this is possible for faces.
 
 ## Mechanism
 
