@@ -3,7 +3,9 @@ face database when browsing
 
 ## Demo 
 
-https://github.com/198thread/lineup/assets/169386773/0e36da8a-e09b-46bd-9027-a14f7f8f3fc7
+
+https://github.com/198thread/lineup/assets/169386773/48fa8f83-56c3-435a-9d67-ea14aab26b44
+
 
 ## Why
 
