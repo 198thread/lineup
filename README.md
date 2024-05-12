@@ -3,7 +3,7 @@ face database when browsing
 
 ## Demo 
 
-https://raw.githubusercontent.com/198thread/lineup/main/lineup_demo.mp4
+https://github.com/198thread/lineup/assets/169386773/0e36da8a-e09b-46bd-9027-a14f7f8f3fc7
 
 ## Why
 
