@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sidebar</title>
+    <style>
+        body {
+            background-color: #191919; /* Very dark mauve */
+            color: white;
+            margin: 0;
+            padding: 10px;
+            font-family: Arial, sans-serif;
+            overflow-y: auto; /* Allows scrolling */
+            scroll-behavior: smooth; /* Smooth scrolling */
+        }
+
+        #lineup-container {
+            height: 100vh; /* Sets the height of the container to be the full viewport height */
+            overflow-y: auto; /* Ensures this container can scroll */
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin-bottom: 1px;
+        }
+
+        a {
+            display: inline-block;
+            margin: 0 0 20px;
+            width: 100%;
+            /* Updated animation name and parameters */
+            animation: slideUpAndScale 0.5s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+        }
+
+        /* Updated animation keyframes for entry */
+        @keyframes slideUpAndScale {
+            from {
+                transform: translateY(5px) scaleX(0.98); /* Added scale transformation */
+                opacity: 0.4;
+            }
+            to {
+                transform: translateY(0) scaleX(1);
+                opacity: 1;
+            }
+        }
+
+
+    </style>
+    <script src="sidebar.js" defer></script> <!-- Added 'defer' to ensure the script executes after the DOM is fully loaded -->
+</head>
+<body>
+    <div id="lineup-container"></div>
+</body>
+</html>

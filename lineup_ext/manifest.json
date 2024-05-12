@@ -1,0 +1,29 @@
+{
+    "manifest_version": 2,
+    "name": "lineup",
+    "version": "1.0",
+    "description": "An extension that fetches images from web pages, sends them via a WebSocket, and displays them in a sidebar.",
+    "permissions": [
+      "activeTab",
+      "storage",
+      "<all_urls>",
+      "webRequest",
+      "webNavigation"
+    ],
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["content.js"],
+        "run_at": "document_idle"
+      }
+    ],
+    "background": {
+      "scripts": ["background.js"],
+      "persistent": true
+    },
+    "sidebar_action": {
+      "default_panel": "sidebar.html",
+      "default_title": "lineup"
+    }
+  }
+  
