@@ -14,12 +14,15 @@ graph LR;
 ```mermaid
 graph LR;
     style E stroke-width:6px
+    style D stroke-width:6px
+    style G stroke-width:6px
+
     A((   11 pieces left    )) --> B[Green Puzzle Piece]
     B --> E["Tree on Left"]
     A --> C[Dark-Blue Puzzle Piece]
-    C --> E["Sea"]
-    A --> D[Light-Blue Puzzle Piece]
-    D --> E["Sky"]
+    C --> D["Sea"]
+    A --> F[Light-Blue Puzzle Piece]
+    F --> G["Sky"]
 ```
 We can reduce the time it takes to build up a whole series of references - we can offload that to a computer.
 
