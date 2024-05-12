@@ -50,13 +50,13 @@ graph BT;
 #### Installation - Database
 0. Install [Elasticsearch](https://www.elastic.co/guide/en/elasticsearch/reference/current/install-elasticsearch.html#elasticsearch-install-packages) and [Python 3.12](https://www.python.org/downloads/release/python-3120/)
 
-#### Installation - Client Server
+#### Installation - Client Side
 1. Clone this repo
 2. Edit *elasticsearch/config/elasticsearch.yaml*, appending
    `xpack.security.enabled: false`
 3. run `pip install -r $repo/requirements.txt`
+4. Choose next part, based on your browser
 
-#### Installation - Browser Extension
 *(for chromium-based e.g. Chrome, Brave, Opera)*
 
 go to [chrome://extensions](chrome://extensions)
@@ -64,6 +64,7 @@ go to [chrome://extensions](chrome://extensions)
 turn on `developer mode`, then `load unpacked extension`
 
 selecting *$repo/lineup_ext/manifest.json
+
 
 
 *(for gecko-based e.g. Firefox, Librewolf)*
