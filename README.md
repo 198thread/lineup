@@ -57,8 +57,22 @@ graph BT;
 3. run `pip install -r $repo/requirements.txt`
 
 #### Installation - Browser Extension
-*(for chromium-based e.g. Chrome, Brave, Opera)* go to [chrome://extensions](chrome://extensions), turn on developer mode, the `load unpacked extension`, selecting *$repo/lineup_ext/manifest.json
-*(for gecko-based e.g. Firefox, Librewolf)* go to [about:debugging](about:debugging), select `This Browser` and then `load temporary extension`, selecting *$repo/lineup_ext/manifest.json
+*(for chromium-based e.g. Chrome, Brave, Opera)*
+
+go to [chrome://extensions](chrome://extensions)
+
+turn on `developer mode`, then `load unpacked extension`
+
+selecting *$repo/lineup_ext/manifest.json
+
+
+*(for gecko-based e.g. Firefox, Librewolf)*
+
+go to [about:debugging](about:debugging)
+
+select `This Browser`, then `load temporary extension`
+
+selecting *$repo/lineup_ext/manifest.json
 
 ## License
 
