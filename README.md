@@ -4,7 +4,7 @@ face database when browsing
 ## Demo 
 
 
-https://github.com/198thread/lineup/assets/169386773/48fa8f83-56c3-435a-9d67-ea14aab26b44
+https://github.com/198thread/lineup/assets/169386773/5f8e5c3b-9545-40aa-9fd1-693c7c9e2fe0
 
 
 ## Why
@@ -27,7 +27,7 @@ graph LR;
     A --> F{{Light-Blue Puzzle Piece}}
     F --> G[[Sky]]
 ```
-Machine learning gives up some ways to reduce the Δtime it takes to build up references.
+To reduce the Δtime it takes to build up references, machine learning libraries can be used.
 
 As PJ Vogt's [Search Engine podcast](https://podcasts.apple.com/gb/podcast/should-this-creepy-search-engine-exist/id1614253637?i=1000655151849) discusses, this is possible for faces.
 
