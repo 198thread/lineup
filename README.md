@@ -58,7 +58,7 @@ graph BT;
 4. *(for gecko-based e.g. Firefox, Librewolf)*
     - go to [about:debugging](about:debugging)
     - select `This Browser`, then `load temporary extension`
-    - selecting *$repo/lineup_ext/manifest.json
+    - selecting *$repo/lineup_ext/manifest.json*
 
 ## License
 
