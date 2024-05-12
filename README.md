@@ -64,7 +64,7 @@ graph BT;
 # Licensing Information
 
 ## Open Source License
-This software is available under the [MIT License](LICENSE.txt) for non-commercial use. This means individuals and organizations using the software without a commercial purpose can do so freely, with no cost, subject to the terms of the MIT License.
+This software is available under the [MIT License](https://github.com/198thread/lineup/blob/main/LICENSE) for non-commercial use. This means individuals and organizations using the software without a commercial purpose can do so freely, with no cost, subject to the terms of the MIT License.
 
 ## Commercial License
 Organizations wishing to use this software for commercial purposes should contact us to obtain a Commercial License. The Commercial License includes provisions tailored for enterprise use, including support and warranty clauses that are not available under the Open Source License.
