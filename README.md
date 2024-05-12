@@ -49,7 +49,7 @@ graph BT;
 
 #### Installation - Database
 0. Install [Elasticsearch](https://www.elastic.co/guide/en/elasticsearch/reference/current/install-elasticsearch.html#elasticsearch-install-packages) and [Python 3.12](https://www.python.org/downloads/release/python-3120/)
-1. Edit *elasticsearch/config/elasticsearch.yaml*, appending
+1. Edit *$elasticsearch-home/config/elasticsearch.yaml*, appending
    `xpack.security.enabled: false`
 
 #### Installation - Client Side
