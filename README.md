@@ -45,19 +45,20 @@ graph BT;
     F{{librewolf}} <--> A
 ```
 
-## Installation (database + lineup server + lineup extension)
+## Installation
 
-0. Install [Elasticsearch](https://www.elastic.co/guide/en/elasticsearch/reference/current/install-elasticsearch.html#elasticsearch-install-packages) 
+#### Installation - Database
+0. Install [Elasticsearch](https://www.elastic.co/guide/en/elasticsearch/reference/current/install-elasticsearch.html#elasticsearch-install-packages) and [Python 3.12](https://www.python.org/downloads/release/python-3120/)
+
+#### Installation - Client Server
 1. Clone this repo
-    - 2. **(Choice A)**. Add your Elasticsearch credentials into $cloned-repo/lineup-svr/env_dials.py
-    - 2. **(Choice B)**. set *"xpack.security.enabled = False"* in elasticsearch/config
-3. run *"pip install -r $cloned-repo/lineup-svr/requirements.txt"*
-4. 
-    - a. in your gecko-based browser (firefox/librewolf)
-    - b. go to about:debugging
-    - c. on the left select *"This Browser"*
-    - d. *"load temporary extension"*
-    - e. select *$cloned-repo/lineup-ext/manifest.json*
+2. Edit *elasticsearch/config/elasticsearch.yaml*, appending
+   `xpack.security.enabled: false`
+3. run `pip install -r $repo/requirements.txt`
+
+#### Installation - Browser Extension
+*(for chromium-based e.g. Chrome, Brave, Opera)* go to [chrome://extensions](chrome://extensions), turn on developer mode, the `load unpacked extension`, selecting *$repo/lineup_ext/manifest.json
+*(for gecko-based e.g. Firefox, Librewolf)* go to [about:debugging](about:debugging), select `This Browser` and then `load temporary extension`, selecting *$repo/lineup_ext/manifest.json
 
 ## License
 
