@@ -24,15 +24,15 @@ graph LR;
     A --> F{{Light-Blue Puzzle Piece}}
     F --> G[[Sky]]
 ```
-We can reduce the Δtime it takes to build up a whole series of references, using machine learning.
+Machine learning gives up some ways to reduce the Δtime it takes to build up references.
 
-We can definitely do this for faces, as PJ Vogt's [Search Engine postcast](https://podcasts.apple.com/gb/podcast/should-this-creepy-search-engine-exist/id1614253637?i=1000655151849) discusses
+As PJ Vogt's [Search Engine postcast](https://podcasts.apple.com/gb/podcast/should-this-creepy-search-engine-exist/id1614253637?i=1000655151849) discusses, this is possible for faces.
 
 ## Mechanism
 
-Using Deepface to build up the reference list in Elasticsearch, a browser extension can allow for all faces recognised while browsing to be stored somewhere, then checked. 
+Using face-recognition to build up the reference list in a database, the lineup browser extension can allow for all faces found while browsing to later be checked. 
 
-This software decouples the browsing from the references.
+This software uncouples the browsing and the reference list.
 
 Multiple people, on different browsers, can share the same database of references.
 
