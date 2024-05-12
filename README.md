@@ -6,10 +6,10 @@ face database when browsing
 Puzzle pieces ask us to recognise from reference:
 ```mermaid
 graph LR;
-    A((   10001/10001 pieces left   )) --> B[Blue Puzzle Piece]
-    B -.-> C[Sky?]
-    B -.-> D[Sea?]
-    B -.-> E[Blue petticoat?]
+    A(((10001/10001 pieces left))) --> B{{Blue Puzzle Piece}}
+    B -.-> C([Sky?])
+    B -.-> D([Sea?])
+    B -.-> E([Blue petticoat?])
 ```
 
 ```mermaid
@@ -18,12 +18,12 @@ graph LR;
     style D stroke-width:6px
     style G stroke-width:6px
 
-    A((   11 pieces left    )) --> B[Green Puzzle Piece]
-    B --> E["Tree on Left"]
-    A --> C[Dark-Blue Puzzle Piece]
-    C --> D["Sea"]
-    A --> F[Light-Blue Puzzle Piece]
-    F --> G["Sky"]
+    A(((11 pieces left))) --> B{{Green Puzzle Piece}}
+    B --> E[["Tree on Left"]]
+    A --> C{{Dark-Blue Puzzle Piece}}
+    C --> D[["Sea"]]
+    A --> F{{Light-Blue Puzzle Piece}}
+    F --> G[["Sky"]]
 ```
 We can reduce the Δtime it takes to build up a whole series of references, using machine learning.
 
@@ -39,11 +39,11 @@ Multiple people, on different browsers, can share the same database of reference
 
 ```mermaid
 graph BT;
-    B[firefox] --> A[face_database]
-    C[librewolf] --> A
-    D[firefox] --> A
-    E[librewolf] --> A
-    F[firefox] --> A
+    B(firefox) --> A[(face_database)]
+    C{{librewolf}} --> A
+    D(firefox) --> A
+    E(firefox) --> A
+    F{{librewolf}} --> A
 ```
 
 ## Installation in 5 steps
