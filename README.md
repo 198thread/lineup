@@ -69,9 +69,8 @@ graph BT;
     - select `This Browser`, then `load temporary extension`
     - selecting *$repo/lineup_ext/manifest.json*
 
-## License
 
-# Licensing Information
+## Licensing Information
 
 ## Open Source License
 This software is available under the [MIT License](LICENSE) for non-commercial use. This means individuals and organizations using the software without a commercial purpose can do so freely, with no cost, subject to the terms of the MIT License.
