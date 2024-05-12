@@ -55,15 +55,10 @@ graph BT;
 2. Edit *elasticsearch/config/elasticsearch.yaml*, appending
    `xpack.security.enabled: false`
 3. run `pip install -r $repo/requirements.txt`
-4. 
-
-*(for gecko-based e.g. Firefox, Librewolf)*
-
-go to [about:debugging](about:debugging)
-
-select `This Browser`, then `load temporary extension`
-
-selecting *$repo/lineup_ext/manifest.json
+4. *(for gecko-based e.g. Firefox, Librewolf)*
+    - go to [about:debugging](about:debugging)
+    - select `This Browser`, then `load temporary extension`
+    - selecting *$repo/lineup_ext/manifest.json
 
 ## License
 
