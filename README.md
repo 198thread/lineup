@@ -14,16 +14,12 @@ graph LR;
 
 ```mermaid
 graph LR;
-    style E stroke-width:6px
-    style D stroke-width:6px
-    style G stroke-width:6px
-
     A(((11 pieces left))) --> B{{Green Puzzle Piece}}
-    B --> E[["Tree on Left"]]
+    B --> E[[Tree on Left]]
     A --> C{{Dark-Blue Puzzle Piece}}
-    C --> D[["Sea"]]
+    C --> D[[Sea]]
     A --> F{{Light-Blue Puzzle Piece}}
-    F --> G[["Sky"]]
+    F --> G[[Sky]]
 ```
 We can reduce the Δtime it takes to build up a whole series of references, using machine learning.
 
@@ -39,11 +35,11 @@ Multiple people, on different browsers, can share the same database of reference
 
 ```mermaid
 graph BT;
-    B(firefox) --> A[(face_database)]
-    C{{librewolf}} --> A
-    D(firefox) --> A
-    E(firefox) --> A
-    F{{librewolf}} --> A
+    B(firefox) <--> A[(face_db)]
+    C{{librewolf}} <--> A
+    D(firefox) <--> A
+    E(firefox) <--> A
+    F{{librewolf}} <--> A
 ```
 
 ## Installation in 5 steps
