@@ -1,5 +1,5 @@
 # lineup
-face database when browsing
+recognition of faces for the web
 
 ## Demo 
 
