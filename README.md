@@ -50,11 +50,11 @@ graph BT;
 
 ```mermaid
 graph LR;
-    A(((group's face_db))) --> B[(Green Puzzle Piece)]
+    A(((group's face_db))) --> B[(a face)]
     B --> E(firefox)
-    A <-- C[(Dark-Blue Puzzle Piece)]
-    C <-- D{{librewolf}}
-    A --> F[(Light-Blue Puzzle Piece)]
+    D{{librewolf}} --> C
+    C[(another face)] --> A
+    A --> F[(and another face)]
     F --> G(firefox)
 ```
 
