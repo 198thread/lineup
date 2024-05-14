@@ -41,7 +41,7 @@ Multiple people, on different browsers, can share the same database of reference
 
 ```mermaid
 graph LR;
-    A(((group's face_db))) <--> B([face])
+    A(((face_db))) <--> B([face])
     B <--> E(firefox)
     D{{librewolf}} <--> C
     C([face]) <--> A
