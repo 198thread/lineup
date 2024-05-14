@@ -43,10 +43,8 @@ Multiple people, on different browsers, can share the same database of reference
 graph LR;
     A(((face_db))) <--> B([face])
     B <--> E(firefox)
-    D{{librewolf}} <--> C
-    C([face]) <--> A
     A <--> F([face])
-    F <--> G(firefox)
+    F <--> G{{librewolf}}
     H(firefox) <--> I([face])
     I <--> A
 ```
