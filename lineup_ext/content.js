@@ -1,4 +1,4 @@
-let imgObserver; // globally accessible observer
+let imgObserver; // file-global accessible observer
 
 // Setup a global container for floating elements if not already present
 if (!document.querySelector('#lineup-container')) {
