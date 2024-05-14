@@ -12,7 +12,7 @@ Puzzle pieces ask us to recognise from reference:
 
 ```mermaid
 graph LR;
-    A(((10001/10001 pieces left))) --> B[(Blue Puzzle Piece)]
+    A(((10001/10001 pieces left))) --> B([Blue Puzzle Piece])
     B -.-> C(Sky?)
     B -.-> D(Sea?)
     B -.-> E(Blue petticoat?)
@@ -20,11 +20,11 @@ graph LR;
 
 ```mermaid
 graph LR;
-    A(((11 pieces left))) --> B[(Green Puzzle Piece)]
+    A(((11 pieces left))) --> B([Green Puzzle Piece])
     B --> E(Tree on Left)
-    A --> C[(Dark-Blue Puzzle Piece)]
+    A ==> C([Dark-Blue Puzzle Piece])
     C --> D(Sea)
-    A --> F[(Light-Blue Puzzle Piece)]
+    A ==> F([Light-Blue Puzzle Piece])
     F --> G(Sky)
 ```
 To reduce the Δtime it takes to build up references, machine learning libraries can be used.
