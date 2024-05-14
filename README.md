@@ -50,12 +50,14 @@ graph BT;
 
 ```mermaid
 graph LR;
-    A(((group's face_db))) --> B[(a face)]
+    A(((group's face_db))) --> B([face])
     B --> E(firefox)
     D{{librewolf}} --> C
-    C[(another face)] --> A
-    A --> F[(and another face)]
+    C([face]) --> A
+    A --> F([face])
     F --> G(firefox)
+    H(firefox) --> I([face])
+    I --> A
 ```
 
 # Installation Requirements & Usage
