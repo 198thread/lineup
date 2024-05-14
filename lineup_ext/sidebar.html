@@ -5,18 +5,19 @@
     <title>Sidebar</title>
     <style>
         body {
-            background-color: #191919; /* Very dark mauve */
+            background-color: #191919; /* very dark */
             color: white;
             margin: 0;
             padding: 10px;
             font-family: Arial, sans-serif;
-            overflow-y: auto; /* Allows scrolling */
-            scroll-behavior: smooth; /* Smooth scrolling */
+            overflow-y: auto;
+            scroll-behavior: smooth;
         }
 
+        /* allow container to scroll and be full-height of sidebar*/
         #lineup-container {
-            height: 100vh; /* Sets the height of the container to be the full viewport height */
-            overflow-y: auto; /* Ensures this container can scroll */
+            height: 100vh;
+            overflow-y: auto;
         }
 
         img {
@@ -30,14 +31,13 @@
             display: inline-block;
             margin: 0 0 20px;
             width: 100%;
-            /* Updated animation name and parameters */
             animation: slideUpAndScale 0.5s cubic-bezier(0.19, 1, 0.22, 1) forwards;
         }
 
-        /* Updated animation keyframes for entry */
+        /* chat bubble-like animation */
         @keyframes slideUpAndScale {
             from {
-                transform: translateY(5px) scaleX(0.98); /* Added scale transformation */
+                transform: translateY(5px) scaleX(0.98);
                 opacity: 0.4;
             }
             to {
@@ -48,7 +48,7 @@
 
 
     </style>
-    <script src="sidebar.js" defer></script> <!-- Added 'defer' to ensure the script executes after the DOM is fully loaded -->
+    <script src="sidebar.js" defer></script> <!--'defer' so script executes AFTER content-loaded -->
 </head>
 <body>
     <div id="lineup-container"></div>
