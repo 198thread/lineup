@@ -45,8 +45,6 @@ graph LR;
     B <--> E(firefox)
     A <--> F([face])
     F <--> G{{librewolf}}
-    H(firefox) <--> I([face])
-    I <--> A
 ```
 
 ```mermaid
