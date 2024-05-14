@@ -50,8 +50,8 @@ graph BT;
 # Installation Requirements & Usage
 
 #### Requirements - Python & Database
-1. Install [Elasticsearch](https://www.elastic.co/guide/en/elasticsearch/reference/current/install-elasticsearch.html#elasticsearch-install-packages) and [Python >= 3.9 <= 3.12](https://www.python.org/downloads/release/python-3120/)
-2. After installing elasticsearch: Edit *$elasticsearch-home/config/elasticsearch.yaml*, setting 
+1. Install [Elasticsearch](https://www.elastic.co/guide/en/elasticsearch/reference/current/install-elasticsearch.html#elasticsearch-install-packages)
+2. After installing elasticsearch: Edit *$elasticsearch-home/config/elasticsearch.yaml* and set  
    `xpack.security.enabled: false`
 
 #### Installation - Client Side
@@ -71,6 +71,6 @@ graph BT;
 This software is available under the [MIT License](LICENSE) for non-commercial use. This means individuals and organizations using the software without a commercial purpose can do so freely, with no cost, subject to the terms of the MIT License.
 
 ## Commercial use
-This software is especially tailored to implement tracable security. A commercial version is available. Organisations wishing to use this software for commercial purposes should contact us to obtain a Commercial License. The Commercial License includes provisions tailored for enterprise use, including support and warranty clauses that are not available under the Open Source License.
+This software is especially tailored to implement tracable security. A secure commercial version is also available.
 
-For more details on obtaining a Commercial License, please contact 198thread on GitHub
+Organisations wishing to use this software for commercial purposes should contact us to obtain a Commercial License.
