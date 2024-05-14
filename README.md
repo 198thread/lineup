@@ -61,7 +61,7 @@ graph BT;
 ## Usage
 1. launch elasticsearch instance, wait until the output about 'health'
 2. launch *$repo/lineup_svr/app.py* using `python3 app.py`
-3. go to [about:debugging](about:debugging)
+3. launch firefox, go to [about:debugging](about:debugging)
 4. select `This Browser`, then `load temporary extension`
 5. selecting *$repo/lineup_ext/manifest.json*
 
