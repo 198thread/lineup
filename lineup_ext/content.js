@@ -1,51 +1,4 @@
-let imgObserver;
-
-function setupObserver() {
-  imgObserver = new IntersectionObserver((entries, observer) => {
-      // Filter for images that are intersecting (visible)
-      const visibleImages = entries.filter(entry => entry.isIntersecting).map(entry => entry.target);
-      if (visibleImages.length > 0) {
-          processImages(visibleImages, observer);
-      }
-  }, {
-      root: null,  // Observing with respect to the viewport
-      rootMargin: '0px',
-      threshold: 0.1  // Adjust based on when you want to trigger the processing
-  });
-
-  // Select and observe the images
-  document.querySelectorAll('img:not([data-linedup="true"])').forEach(img => {
-    imgObserver.observe(img);
-  });
-}
-
-
-function observeNewImages() {
-  const newImages = document.querySelectorAll('img:not([data-linedup="true"])');
-  newImages.forEach(img => {
-      if (!img.hasAttribute('data-linedup')) {
-        imgObserver.observe(img);
-      }
-  });
-}
-
-setupObserver();
-
-
-setTimeout(() => {
-  observeNewImages();
-}, 380);
-
-
-let timeout = null;
-window.addEventListener('scroll', () => {
-  clearTimeout(timeout);
-  timeout = setTimeout(() => {
-    observeNewImages();
-  }, 600);
-});
-
-
+let imgObserver; // globally accessible observer
 
 // Setup a global container for floating elements if not already present
 if (!document.querySelector('#lineup-container')) {
@@ -61,7 +14,59 @@ if (!document.querySelector('#lineup-container')) {
 }
 
 
+function setupObserver() {
+  // implement observer to be able to call processing, when images in focus
 
+  imgObserver = new IntersectionObserver((entries, observer) => {
+
+      const visibleImages = entries.filter(entry => entry.isIntersecting).map(entry => entry.target);
+
+      // if images in focus, but any value (any part visible)
+      if (visibleImages.length > 0) {
+          processImages(visibleImages, observer);
+      }
+  }, {
+      root: null, // don't set root for observer 
+      rootMargin: '0px', // calibrate to 0px
+      threshold: 0.1  // setting trigger
+  });
+
+  // find and select all images
+
+  document.querySelectorAll('img:not([data-linedup="true"])').forEach(img => {
+
+    imgObserver.observe(img);
+
+  });
+
+}
+
+
+function observeNewImages() {
+  // observe new images, even when dynamically loaded post Content-loaded
+  
+  // iterate and observe
+  document.querySelectorAll('img:not([data-linedup="true"])').forEach(img => {
+      imgObserver.observe(img);
+  });
+}
+
+// set up at start
+setupObserver();
+
+// secondary observer ingest at arbitrary time
+setTimeout(() => {
+  observeNewImages();
+}, 380);
+
+// additional observer ingest at user-idle based on scroll
+let timeout = null;
+window.addEventListener('scroll', () => {
+  clearTimeout(timeout);
+  timeout = setTimeout(() => {
+    observeNewImages();
+  }, 600);
+});
 
 /*
 
@@ -69,22 +74,32 @@ END OF OBSERVER SETUP AND CONTAINER SETUP
 
 
 
+
+
+
+
+
+
+
+
+
+
+
 START OF IMAGE PARSING AND MESSAGE OUT
 
 */ 
 
-
-
-
-
 function findOthers(hostPageURL, imageDirectURL, embedding) {
-
+  // function to allow user to query similar faces from database
+  
+  // prepare message in correct structure
   const messageContent = {
     hostPageURL: hostPageURL,
-    imageDirectURL: imageDirectURL, // Corrected to use the current imageTag in the loop
+    imageDirectURL: imageDirectURL,
     embedding: embedding
   };
 
+  // send message
   browser.runtime.sendMessage({
       type: 'to-bg',
       query: messageContent
@@ -94,15 +109,18 @@ function findOthers(hostPageURL, imageDirectURL, embedding) {
 
 
 function processImages(images) {
-
-  // Process only new images that don't have the 'linedup' property
+  // auto function to query database for face
+  
+  // take in observed, visible images
   images.forEach(img => {
 
-        // Process the image
+        // convert to base64
         imageToBase64(img, (base64Image) => {
+          
+          // if conversion ok (dependent on CSP)
           if (base64Image) {
 
-            // Send the image data to background.js
+            // pack and send
             browser.runtime.sendMessage({
               type: 'to-bg',
               content: {
@@ -112,8 +130,10 @@ function processImages(images) {
               }
             });
 
+            // set processed flag
             img.setAttribute('data-linedup', 'true');
 
+            // remove from observed images
             imgObserver.unobserve(img); 
           }
       });
@@ -123,37 +143,60 @@ function processImages(images) {
  
 
 function imageToBase64(imgElement, callback) {
+  // function to convert img elements to base64
+
+  // create HTML5 canvas
   const canvas = document.createElement('canvas');
+
+  // create context for canvas
   const context = canvas.getContext('2d');
+
+  // set canvas size to img size
   canvas.width = imgElement.clientWidth;
   canvas.height = imgElement.clientHeight;
+  
+  // draw
+  // WARN: can taint canvas
   context.drawImage(imgElement, 0, 0, imgElement.clientWidth, imgElement.clientHeight);
 
   try {
+    // cast to img and return
+    // WARN: can fail due to browser idiosyncratic CSP
+    // Possible error "tainted due to CORS"
     const dataURL = canvas.toDataURL('image/png');
     callback(dataURL);
+
   } catch (error) {
+    // useful for regular console, not extension debugger
     console.error("Failed to convert image to base64:", error);
     callback(null);
   }
 }
-
-
 
 /*
 
 END OF IMAGE PARSING
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 START OF IMAGE PARSING AND MESSAGE OUT
 
 */ 
 
-
-
-
-
 function configureButtonStyle(x, y) {
+  // branding function
+  // FUTURE: making font-family work
   return `
       text-decoration: none;
       color: black;
@@ -171,18 +214,17 @@ function configureButtonStyle(x, y) {
       z-index: 1001;
       cursor: pointer;
       user-select: none;
-      pointer-events: all; // Ensure the button can be clicked
+      pointer-events: all;
 
       font-family: 'Gill Sans, sans-serif';
-      transform: scale(0.8); /* Start from a scaled down state */
-      transition: transform 70ms; /* Simple transition for scaling */
-
+      transform: scale(0.8);
+      transition: transform 70ms;
   `;
 }
 
 
 function findButtonAtPosition(x, y) {
-
+  // function to locate previous buttons, to perform updates
   const buttons = document.querySelectorAll('#lineup-container > a');
 
   for (const button of buttons) {
@@ -200,17 +242,25 @@ function findButtonAtPosition(x, y) {
 }
 
 
-
-
 function updateImages(data) {
+  // updater for images, based on returns from model
+  
+  // find the element to update, based on img.src matching
   const imageTags = document.querySelectorAll(`img[src="${data.imageDirectURL}"]`);
 
+  // apply 'forEach' in case of dynamic unloading
   imageTags.forEach(imageTag => {
+
+      // get onscreen size, to calc positions
       const rect = imageTag.getBoundingClientRect();
 
-      // Loop over the index of facial areas
+      // loop over each face in data
       for (let idx = 0; idx < data.facial_area.length; idx++) {
-          const faceBox = data.facial_area[idx]; // Access faceBox using index
+
+          // unpack face data
+          const faceBox = data.facial_area[idx];
+          
+          // unpack x and y position of button
           const xPosition = rect.left + window.scrollX + (faceBox.x_per / 100 * rect.width);
           const yPosition = rect.top + window.scrollY + (faceBox.y_per / 100 * rect.height);
 
@@ -218,42 +268,54 @@ function updateImages(data) {
           const existingButton = findButtonAtPosition(xPosition, yPosition);
           const hitRate = data.hit_rate[idx];
 
+          // perform conditional text update for button, if already present
           if (existingButton) {
-
               const currentText = existingButton.textContent;
-              // Update text content if the new number is larger
+
+              // update text content if the new number is larger
               if (parseInt(currentText) < hitRate || currentText === ' ') {
                 currentText = hitRate.toString();
               }
+
           } else {
-              // No existing button, create a new one
+
+              // no existing button, create a new one
               const button = document.createElement('a');
+              
+              // set text
               button.textContent = hitRate > 1 ? hitRate.toString() : ' ';
+
+              // set style and position
               button.style.cssText = configureButtonStyle(xPosition, yPosition);
+
+              // add event for user-triggered query
               button.addEventListener('click', function(event) {
+                  
+                  // allow button's overlay to not fall through
                   event.stopPropagation();
                   event.preventDefault();
+
+                  // set function to find similar faces
                   findOthers(window.location.href, imageTag.src, data.embeddings[idx]);
               });
 
-              // Trigger the scale animation
+              // wind up animation and show end frame
               setTimeout(() => {
                 button.style.transform = 'scale(1)';
-              }, 10); // Short delay to ensure the initial style is applied first
+              }, 10); // add delay to animation to not collide
 
-
+              // add button to holding container
+              // avoids problems with DOM/CSS idiosyncracies
+              // consistently overlays button
               document.querySelector('#lineup-container').appendChild(button);
           }
       }
   });
 }
 
+// recieve data to update and add buttons
 browser.runtime.onMessage.addListener((message) => {
   if (message.action === "updateImages") {
     updateImages(message.data);
   }
 });
-
-
-
-
