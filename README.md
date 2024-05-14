@@ -3,7 +3,7 @@ recognition of faces for the web
 
 ## Demo 
 
-![lineup_demo](https://github.com/198thread/lineup/assets/169386773/a0733e18-d54d-4475-8eeb-6e0f4d82ad8c)
+![lineup_demo](https://github.com/198thread/lineup/assets/169386773/74122711-ab81-41d0-83b0-44b1baeed941)
 
 
 ## Why
