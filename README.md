@@ -60,14 +60,14 @@ graph BT;
 
 #### Requirements - Python & Database
 1. Install [Elasticsearch](https://www.elastic.co/guide/en/elasticsearch/reference/current/install-elasticsearch.html#elasticsearch-install-packages)
-2. After installing elasticsearch: Edit *$elasticsearch-home/config/elasticsearch.yaml* and set  
+2. (After installing elasticsearch) Edit *$elasticsearch-home/config/elasticsearch.yaml* and set  
    `xpack.security.enabled: false`
 
 #### Installation - Client Side
 1. Clone this repo
 2. run `python3 -m pip install -r $repo/lineup_svr/requirements.txt`
   
-## Usage
+#### Usage
 1. launch elasticsearch instance, wait until the output about 'health'
 2. launch *$repo/lineup_svr/app.py* using `python3 app.py`
 3. launch firefox, go to [about:debugging](about:debugging)
