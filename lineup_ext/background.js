@@ -1,53 +1,64 @@
-let socket;
+let socket; // file-global accessible socket
 
 function establishWebSocketConnection() {
-  // Establishing connection on the specified port 2882
+  // handler for socket expected functions
+  
+  // implement socket at python app.py address
   socket = new WebSocket('ws://localhost:2882');
 
+  // check for comms
   socket.onopen = function() {
     console.log('WebSocket connected at localhost:2882');
-    // The WebSocket is now ready to send and receive messages
   };
 
+  // handle incoming
   socket.onmessage = function(event) {
-    // Handle any message from the WebSocket server
     console.log('app.py 📫');
 
-    // Check if the data is in JSON format
+    // cast data to json, to be sent around files
     try {
       let jdata = JSON.parse(event.data);
 
-
+      // divert to appropriate files
       handleMessageFromServer(jdata);
 
     } catch (error) {
+      
+      // use page specific console, not extension debugger
       console.error('Error parsing JSON:', error);
       console.log(event.data)
-      return; // Exit the function if parsing fails
+      return;
     }
 
   };
 
+  // handle error
   socket.onerror = function(error) {
     console.error('WebSocket Error:', error);
   };
 
+  // handle closing from remote
   socket.onclose = function(event) {
     if (!event.wasClean) {
       console.error(`WebSocket Error: [code ${event.code}] ${event.reason}`);
     }
+    // rejoin if possible, check every 5 seconds
     console.log('WebSocket connection closed. Trying to reconnect...');
-    setTimeout(establishWebSocketConnection, 5000); // Reconnect every 5 seconds if the connection was not closed cleanly
+    setTimeout(establishWebSocketConnection, 5000);
   };
 }
 
 
 function updateImageInTabs(data) {
+  // function to divert data, from model to images that need updates
+
+  // find content.js of said page
   const hostPageURL = data.hostPageURL;
 
   browser.tabs.query({url: hostPageURL}).then(tabs => {
     tabs.forEach(tab => {
-      // Sending message to content script
+
+      // send message to correct content.js
       browser.tabs.sendMessage(tab.id, {
         action: "updateImages",
         data: data
@@ -57,8 +68,11 @@ function updateImageInTabs(data) {
 }
 
 function updateImagesInSidebar(data) {
+  // debug function to send all updates to sidebar
 
   if (typeof browser.sidebarAction !== 'undefined') {
+
+    // pack and send
     browser.runtime.sendMessage({
       type: 'from-bg',
       query: data.query
@@ -69,12 +83,16 @@ function updateImagesInSidebar(data) {
 }
 
 function handleMessageFromServer(data) {
-  
+  // function to validate and divert data from app.py
+
   // Check if all required fields are present
   if (data.hostPageURL) {
-  // if (data && data.hostPageURL && data.imageDirectURL && data.imageData) {
+    
+    // update images on page
     updateImageInTabs(data);
   } else if (data.query) {
+    
+    // append images to sidebar
     updateImagesInSidebar(data)
   } else {
     console.error('Data from server is missing required fields ' + data);
@@ -82,9 +100,11 @@ function handleMessageFromServer(data) {
 }
 
 
-// Function to send messages to the WebSocket server
 function sendMessageToWebSocket(message) {
+  // function to validate and send to app.py
   if (socket && socket.readyState === WebSocket.OPEN) {
+    
+    // send it
     socket.send(JSON.stringify(message));
   } else {
     console.error('WebSocket is not connected.');
@@ -92,12 +112,16 @@ function sendMessageToWebSocket(message) {
 }
 
 
-// Listen for messages from content scripts
 browser.runtime.onMessage.addListener((message) => {
+  // listen for messages from other js pages
+
   if (message.type === 'to-bg') {
     if (message.query) {
+      // handle if from sidebar
       console.log('📨 face.mbd');
       sendMessageToWebSocket(message);
+
+      // handle if from content.js
     } else if (message.content) {
       console.log('content.js 📫');
       sendMessageToWebSocket(message);
@@ -105,4 +129,4 @@ browser.runtime.onMessage.addListener((message) => {
   }
 });
 
-establishWebSocketConnection();
+establishWebSocketConnection(); // start socket
