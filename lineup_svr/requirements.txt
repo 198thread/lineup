@@ -1,0 +1,5 @@
+deepface
+numpy
+pillow
+tf-keras
+websockets
