@@ -40,24 +40,24 @@ This software uncouples the browsing and the reference list.
 Multiple people, on different browsers, can share the same database of references.
 
 ```mermaid
+graph LR;
+    A(((group's face_db))) <--> B([face])
+    B <--> E(firefox)
+    D{{librewolf}} <--> C
+    C([face]) <--> A
+    A <--> F([face])
+    F <--> G(firefox)
+    H(firefox) <--> I([face])
+    I <--> A
+```
+
+```mermaid
 graph BT;
     B(firefox) <--> A[(face_db)]
     C{{librewolf}} <--> A
     D(firefox) <--> A
     E(firefox) <--> A
     F{{librewolf}} <--> A
-```
-
-```mermaid
-graph LR;
-    A(((group's face_db))) --> B([face])
-    B --> E(firefox)
-    D{{librewolf}} --> C
-    C([face]) --> A
-    A --> F([face])
-    F --> G(firefox)
-    H(firefox) --> I([face])
-    I --> A
 ```
 
 # Installation Requirements & Usage
