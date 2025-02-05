@@ -59,9 +59,8 @@ graph BT;
 # Installation Requirements & Usage
 
 #### Requirements - Python & Database
-1. Install [Elasticsearch](https://www.elastic.co/guide/en/elasticsearch/reference/current/install-elasticsearch.html#elasticsearch-install-packages)
-2. (After installing elasticsearch) Edit *$elasticsearch-home/config/elasticsearch.yaml* and set  
-   `xpack.security.enabled: false`
+
+_redacted due to EU AI Act_
 
 #### Installation - Client Side
 
