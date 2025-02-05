@@ -64,9 +64,9 @@ graph BT;
    `xpack.security.enabled: false`
 
 #### Installation - Client Side
-1. Clone this repo
-2. run `python3 -m pip install -r $repo/lineup_svr/requirements.txt`
-  
+
+_redacted due to EU AI Act_
+
 #### Usage
 1. launch elasticsearch instance, wait until the output about 'health'
 2. launch *$repo/lineup_svr/app.py* using `python3 app.py`
@@ -77,9 +77,8 @@ graph BT;
 # Licensing
 
 ## Open Source License
-This software is available under the [MIT License](LICENSE) for non-commercial use. This means individuals and organizations using the software without a commercial purpose can do so freely, with no cost, subject to the terms of the MIT License.
+This software is available under the [MIT License](LICENSE).
 
 ## Commercial use
-This software is especially tailored to implement tracable security. A secure commercial version is also available.
 
-Organisations wishing to use this software for commercial purposes should contact us to obtain a Commercial License.
+_redacted due to EU AI Act_
